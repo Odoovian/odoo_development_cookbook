@@ -11,7 +11,7 @@
     'data': [
         "security/hostel_security.xml",
         "security/ir.model.access.csv",
-        #"views/hostel.xml",
+        "views/hostel.xml",
     ],
     'assets': {
         'web.assets_backend': [
