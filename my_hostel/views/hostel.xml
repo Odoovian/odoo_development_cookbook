@@ -63,6 +63,7 @@
                             <field name="type"/>
                             <field name="hostel_rating"/>
                             <field name="other_info"/>
+                            <field name="category_id"/>
                         </group>
                     </group>
                     <group>

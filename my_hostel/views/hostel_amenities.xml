@@ -13,7 +13,7 @@
     </record>
 
 
-<menuitem id="hostel_configuration_menu" name="Configuration" parent="hostel_main_menu"
+    <menuitem id="hostel_configuration_menu" name="Configuration" parent="hostel_main_menu"
               groups="my_hostel.group_hostel_manager"
               sequence="10"/>
     <menuitem id="hostel_amenities_menu" name="Hostel Amenities" parent="hostel_configuration_menu"
