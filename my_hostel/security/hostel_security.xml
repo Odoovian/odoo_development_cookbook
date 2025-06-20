@@ -2,7 +2,7 @@
 <odoo>
     <record id="module_category_hostel" model="ir.module.category">
         <field name="name">Hostel Management</field>
-        <field name="sequence">31</field>
+        <field name="sequence">310</field>
     </record>
     <record id="group_hostel_manager" model="res.groups">
         <field name="name">Hostel Manager</field>

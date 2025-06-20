@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="action_hostel_room" model="ir.actions.act_window">
+        <field name="name">Hostel Room</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">hostel.room</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                Create Hostel Room.
+            </p>
+        </field>
+    </record>
+
+    <menuitem id="hostel_room_menu" name="Hostel Room" parent="hostel_main_menu"
+              action="my_hostel.action_hostel_room" groups="my_hostel.group_hostel_manager"
+              sequence="2"/>
+
+    <record id="view_hostel_room_form_view" model="ir.ui.view">
+        <field name="name">hostel.room.form.view</field>
+        <field name="model">hostel.room</field>
+        <field name="arch" type="xml">
+            <form string="Hostel Room">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="room_no"/>
+                        <field name="floor_no"/>
+                        <field name="rent_amount"/>
+                        <field name="currency_id"/>
+                        <field name="hostel_amenities_ids"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_hostel_room_tree_view" model="ir.ui.view">
+        <field name="name">hostel.room.tree.view</field>
+        <field name="model">hostel.room</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="room_no"/>
+                <field name="floor_no"/>
+                <field name="rent_amount"/>
+                <field name="currency_id"/>
+            </tree>
+        </field>
+    </record>
+</odoo>

@@ -5,13 +5,17 @@
     # Supports reStructuredText(RST) format (description is Deprecated),
     'author': "Ayesha Siddika Suchi (Odoovian)",
     'website': "https://odoovian.odoo.com/",
-    'category': 'Uncategorized',
+    'category': 'Hostel Management/Hostel',
     'version': '17.0.1.0.0',
     'depends': ['base'],
     'data': [
+        "data/data.xml",
         "security/hostel_security.xml",
         "security/ir.model.access.csv",
         "views/hostel.xml",
+        "views/hostel_room.xml",
+        "views/hostel_student.xml",
+        "views/hostel_amenities.xml",
     ],
     'assets': {
         'web.assets_backend': [
@@ -19,4 +23,6 @@
         ],
     },
     'demo': ['demo.xml'],
+    'application': True,
+    'installable': True,
 }

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="action_hostel_amenities" model="ir.actions.act_window">
+        <field name="name">Hostel Amenities</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">hostel.amenities</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                Create Hostel amenities.
+            </p>
+        </field>
+    </record>
+
+
+<menuitem id="hostel_configuration_menu" name="Configuration" parent="hostel_main_menu"
+              groups="my_hostel.group_hostel_manager"
+              sequence="10"/>
+    <menuitem id="hostel_amenities_menu" name="Hostel Amenities" parent="hostel_configuration_menu"
+              action="my_hostel.action_hostel_amenities" groups="my_hostel.group_hostel_manager"
+              sequence="1"/>
+
+    <record id="view_hostel_amenities_form_view" model="ir.ui.view">
+        <field name="name">hostel.amenities.form.view</field>
+        <field name="model">hostel.amenities</field>
+        <field name="arch" type="xml">
+            <form string="Hostel amenities">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_hostel_amenities_tree_view" model="ir.ui.view">
+        <field name="name">hostel.amenities.tree.view</field>
+        <field name="model">hostel.amenities</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+</odoo>
