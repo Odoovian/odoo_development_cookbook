@@ -23,13 +23,22 @@
             <form string="Hostel Room">
                 <sheet>
                     <group>
-                        <field name="name"/>
-                        <field name="room_no"/>
-                        <field name="floor_no"/>
-                        <field name="rent_amount"/>
-                        <field name="currency_id"/>
-                        <field name="hostel_amenities_ids"/>
+                        <group>
+                            <field name="hostel_id"/>
+                            <field name="name"/>
+                            <field name="room_no"/>
+                            <field name="floor_no"/>
+                            <field name="rent_amount"/>
+                            <field name="currency_id"/>
+                            <field name="student_ids"/>
+                            <field name="hostel_amenities_ids"/>
+                        </group>
+                        <group>
+                            <field name="student_per_room"/>
+                            <field name="availability"/>
+                        </group>
                     </group>
+
                 </sheet>
             </form>
         </field>

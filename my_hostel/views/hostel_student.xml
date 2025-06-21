@@ -23,10 +23,19 @@
             <form string="Hostel Student">
                 <sheet>
                     <group>
-                        <field name="name"/>
-                        <field name="gender"/>
-                        <field name="room_id"/>
+                        <group>
+                            <field name="name"/>
+                            <field name="gender"/>
+                            <field name="room_id"/>
+                        </group>
+                        <group>
+                            <field name="admission_date"/>
+                            <field name="discharge_date"/>
+                            <field name="duration"/>
+                            <field name="hostel_id"/>
+                        </group>
                     </group>
+
                 </sheet>
             </form>
         </field>

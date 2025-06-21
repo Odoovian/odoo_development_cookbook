@@ -1,4 +1,5 @@
-from odoo import models, fields
+from odoo import models, fields, api,_
+from odoo.exceptions import ValidationError
 
 
 class HostelRoom(models.Model):
@@ -18,3 +19,19 @@ class HostelRoom(models.Model):
                                             "hostel_room_amenities_rel", "room_id", "amenitiy_id",
                                             string="Amenities", domain="[('active', '=', True)]",
                                             help="Select hostel room amenities")
+    student_per_room = fields.Integer("Student Per Room", required=True, help="Students allocated per room")
+    availability = fields.Float(compute="_compute_check_availability", store=True, string="Availability",  help="Room availability in hostel")
+
+    _sql_constraints = [ ("room_no_unique", "unique(room_no)", "Room number must be unique!") ]
+
+    @api.constrains("rent_amount")
+    def _check_rent_amount(self):
+        """Constraint on negative rent amount"""
+        if self.rent_amount < 0:
+            raise ValidationError(_("Rent Amount Per Month should not be a negative value!"))
+
+    @api.depends("student_per_room", "student_ids")
+    def _compute_check_availability(self):
+        """Method to check room availability"""
+        for rec in self:
+            rec.availability = rec.student_per_room - len(rec.student_ids.ids)
